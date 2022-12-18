@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeilKleistGao/mlsp-vscode"
+  },
   "categories": [
     "Programming Languages"
   ],
