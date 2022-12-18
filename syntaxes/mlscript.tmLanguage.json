@@ -1,0 +1,63 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "mlscript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#params"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "support",
+				"match": "\\b(if|then|else|fun|of|let|rec|in|mut|class|trait|interface|new|namespace|type|and|or|is|as)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.mlscript",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mlscript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"name": "comment.line",
+			"begin": "//(?!\\|)",
+			"end": "\n",
+			"patterns": [{
+				"name": "comment.line.mlscript"
+			}]
+		},
+		"comments": {
+			"name": "comment.block",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [{
+				"name": "comment.block.mlscript"
+			}]
+		},
+		"params": {
+			"patterns": [{
+				"name": "entity.name.tag",
+				"match": "(\\:pe|\\:dp|\\:ds|\\:ducs|\\:verbose|\\:ex|\\:explain|\\:ns|\\:no-simpl|\\:stats|\\:stdout|\\:ParseOnly|\\:AllowTypeErrors|\\:AllowParseErrors|\\:AllowRuntimeErrors|\\:ShowRelativeLineNums|\\:NewParser|\\:NoJS|\\:NoProvs|\\:ne|\\:ng|\\:js|\\:ts|\\:dv|\\:ge|\\:re|\\:ShowRepl|\\:escape|\\:e|\\:w|\\:p|\\:d|\\:s|\\:v)"
+			}]
+		}
+	},
+	"scopeName": "source.mls"
+}
