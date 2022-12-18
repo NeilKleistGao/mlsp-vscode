@@ -10,10 +10,20 @@
     "type": "git",
     "url": "git+https://github.com/NeilKleistGao/mlsp-vscode.git"
   },
-  "author": "",
+  "author": "NeilKleistGao",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/NeilKleistGao/mlsp-vscode/issues"
   },
-  "homepage": "https://github.com/NeilKleistGao/mlsp-vscode#readme"
+  "homepage": "https://github.com/NeilKleistGao/mlsp-vscode#readme",
+  "engines": {
+		"vscode": "^1.63.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^7.0.0"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.63.0",
+		"@vscode/test-electron": "^2.1.2"
+	}
 }
