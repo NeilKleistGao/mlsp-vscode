@@ -1,6 +1,5 @@
 import { ChildProcess, spawn } from "child_process";
 import * as path from "path";
-import { resolve } from "path";
 import { ExtensionContext } from "vscode";
 
 import {
