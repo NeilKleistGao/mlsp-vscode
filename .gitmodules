@@ -1,0 +1,3 @@
+[submodule "mlsp"]
+	path = mlsp
+	url = git@github.com:NeilKleistGao/mlsp.git
