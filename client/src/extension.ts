@@ -1,5 +1,6 @@
 import { ChildProcess, spawn } from "child_process";
 import * as path from "path";
+import { resolve } from "path";
 import { ExtensionContext } from "vscode";
 
 import {
@@ -18,7 +19,7 @@ export function activate(p_context: ExtensionContext) {
   const server_option: ServerOptions = () => {
     return new Promise<ChildProcess>((p_resolve, p_reject) => {
       try {
-        const child = spawn("java", ["-jar", path.join("server", "mlsp.jar")]);
+        const child = spawn("java", ["-jar", p_context.asAbsolutePath(path.join("server", "mlsp.jar"))]);
         p_resolve(child);
       }
       catch {
@@ -30,6 +31,8 @@ export function activate(p_context: ExtensionContext) {
   client = new LanguageClient(
     "mlsp", server_option, client_option
   );
+
+  client.start();
 }
 
 export function diactivate(): Thenable<void> | undefined {
