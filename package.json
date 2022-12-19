@@ -6,18 +6,17 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "main": "./client/out/extension.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NeilKleistGao/mlsp-vscode"
   },
-  "categories": [
-    "Programming Languages"
-  ],
+  "categories": [],
   "contributes": {
     "languages": [{
       "id": "mlscript",
       "aliases": ["mlscript", "mlscript"],
-      "extensions": [".mls"],
+      "extensions": [".mls", ".fun"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
