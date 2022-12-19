@@ -15,20 +15,13 @@ export function activate(p_context: ExtensionContext) {
     documentSelector: [{scheme: "file", language: "mlscript"}]
   };
 
-  const server_option: ServerOptions = () => {
-    return new Promise<ChildProcess>((p_resolve, p_reject) => {
-      try {
-        const child = spawn("java", ["-jar", p_context.asAbsolutePath(path.join("server", "mlsp.jar"))]);
-        p_resolve(child);
-      }
-      catch {
-        p_reject("can't create mlsp server.");
-      }
-    });
+  const server_option: ServerOptions = {
+    command: "java",
+    args: ['-jar', p_context.asAbsolutePath(path.join("server", "mlsp.jar"))],
   };
 
   client = new LanguageClient(
-    "mlsp", server_option, client_option
+    "mlsp", "mls client", server_option, client_option
   );
 
   client.start();
