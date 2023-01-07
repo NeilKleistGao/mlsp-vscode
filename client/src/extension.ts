@@ -15,7 +15,6 @@ export function activate(p_context: ExtensionContext) {
     documentSelector: [{scheme: "file", language: "mlscript"}]
   };
 
-  console.log(path.resolve());
   const server_option: ServerOptions = {
     command: "java",
     args: ['-jar', p_context.asAbsolutePath(path.join("server", "mlsp.jar"))],
